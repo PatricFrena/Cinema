@@ -64,6 +64,7 @@
             this.btnconfirmar.TabIndex = 2;
             this.btnconfirmar.Text = "Confirmar";
             this.btnconfirmar.UseVisualStyleBackColor = true;
+            this.btnconfirmar.Click += new System.EventHandler(this.btnconfirmar_Click);
             // 
             // btnsair
             // 

@@ -19,7 +19,17 @@ namespace cinema
 
         private void btnsair_Click(object sender, EventArgs e)
         {
+            Application.Exit();
+        }
+
+        private void btnconfirmar_Click(object sender, EventArgs e)
+        {
             
+            Menu newMenu = new Menu();
+            this.Hide();
+            newMenu.Show();
+            
+
         }
     }
 }
