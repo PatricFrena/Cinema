@@ -31,7 +31,7 @@ namespace cinema.Contexto
 
                 }
         }
-        public void Deconecabanco()
+        public void Desconectabanco()
         {
             try
             {

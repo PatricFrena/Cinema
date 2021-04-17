@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace cinema.Modelo
 {
-    class RetornoFuncao
+    public class RetornoFuncao
     {
-
+        public bool sucesso { get; set; }
+        public string Descricao { get; set; }
     }
 }

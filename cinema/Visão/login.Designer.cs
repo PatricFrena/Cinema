@@ -1,4 +1,4 @@
-﻿namespace cinema
+﻿namespace cinema.Visão
 {
     partial class login
     {
