@@ -16,5 +16,22 @@ namespace cinema.Visão
         {
             InitializeComponent();
         }
+
+        private void ultilitriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cadastroDeUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroDeUsuario usuario = new CadastroDeUsuario();
+            usuario.Show();
+
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

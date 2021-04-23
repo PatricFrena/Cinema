@@ -104,6 +104,12 @@
     <Compile Include="Modelo\RetornoFuncao.cs" />
     <Compile Include="Modelo\UsuarioModelo.cs" />
     <Compile Include="Repositório\usuarioRepositorio.cs" />
+    <Compile Include="Visão\CadastroDeUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visão\CadastroDeUsuario.Designer.cs">
+      <DependentUpon>CadastroDeUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Visão\cadastroSala.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,11 +139,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Visão\CadastroDeUsuario.resx">
+      <DependentUpon>CadastroDeUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Visão\cadastroSala.resx">
       <DependentUpon>cadastroSala.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Visão\login.resx">
       <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visão\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

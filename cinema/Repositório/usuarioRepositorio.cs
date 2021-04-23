@@ -36,5 +36,47 @@ namespace cinema.Repositório
             }
 
         }
+
+        public int geraUsuario() 
+        {
+            try 
+            {
+                var conexao = new BancoDadosDapperContexto();
+                var bancoDados = conexao.conexaobanco();
+                var serializa = @"SELECT codigo FROM usuarios ORDER BY codigo DESC LIMIT 1";
+                return bancoDados.Query<int>(serializa).FirstOrDefault() + 1;
+            }
+            catch 
+            {
+                return 0;
+            }
+        }
+
+        public RetornoFuncao cadastro(string nome, string senha)
+        {
+            try 
+            {
+                var conexao = new BancoDadosDapperContexto();
+                var bancoDados = conexao.conexaobanco();
+                var codigo = geraUsuario();
+                if (codigo >= 0)
+                    return new RetornoFuncao() { sucesso = false, Descricao = "Erro ao Serializar usuário!" };
+
+                var usuario = new UsuarioModelo()
+                {
+                    codigo = codigo,
+                    nome = nome,
+                    senha = senha
+
+                };
+                bancoDados.Execute(@"INSERT INTO usuarios(codigo, nome, senha)values(@codigo, @nome, @senha)", usuario);
+                return new RetornoFuncao() { sucesso = false, Descricao = "Usuário cadastrado com sucesso" };
+            }
+            catch (Exception erro)
+            {
+                return new RetornoFuncao() { sucesso = false, Descricao = erro.Message };
+            }
+        }
+
     }
 }
