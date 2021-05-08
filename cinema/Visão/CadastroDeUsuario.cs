@@ -32,9 +32,9 @@ namespace cinema.Visão
                 var retorno = _UsuarioControlador.cadastroUsuario(txtusuario.Text, txtsenha.Text, txtconfsenha.Text);
                 if (retorno.sucesso)
                 {
-                    Menu newform2 = new Menu();
+                    /*Menu newform2 = new Menu();
                     this.Hide();
-                    newform2.ShowDialog();
+                    newform2.ShowDialog();*/
                 }
                 else
                     MessageBox.Show(retorno.Descricao);

@@ -99,11 +99,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexto\BancoDadosDapperContexto.cs" />
+    <Compile Include="Controlador\FilmeControlador.cs" />
     <Compile Include="Controlador\LoginControlador.cs" />
+    <Compile Include="Controlador\SalaControlador.cs" />
     <Compile Include="Controlador\UsuarioControlador.cs" />
+    <Compile Include="Modelo\FilmeModelo.cs" />
     <Compile Include="Modelo\RetornoFuncao.cs" />
+    <Compile Include="Modelo\SalaModelo.cs" />
     <Compile Include="Modelo\UsuarioModelo.cs" />
+    <Compile Include="Repositório\FilmeRepositorio.cs" />
+    <Compile Include="Repositório\SalaRepositorio.cs" />
     <Compile Include="Repositório\usuarioRepositorio.cs" />
+    <Compile Include="Visão\CadastroDeFilme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visão\CadastroDeFilme.Designer.cs">
+      <DependentUpon>CadastroDeFilme.cs</DependentUpon>
+    </Compile>
     <Compile Include="Visão\CadastroDeUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +151,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Visão\CadastroDeFilme.resx">
+      <DependentUpon>CadastroDeFilme.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Visão\CadastroDeUsuario.resx">
       <DependentUpon>CadastroDeUsuario.cs</DependentUpon>
     </EmbeddedResource>

@@ -21,5 +21,10 @@ namespace cinema.Visão
         {
             this.Close();
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

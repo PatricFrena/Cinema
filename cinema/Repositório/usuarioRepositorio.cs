@@ -59,7 +59,7 @@ namespace cinema.Repositório
                 var conexao = new BancoDadosDapperContexto();
                 var bancoDados = conexao.conexaobanco();
                 var codigo = geraUsuario();
-                if (codigo >= 0)
+                if (codigo == 0)
                     return new RetornoFuncao() { sucesso = false, Descricao = "Erro ao Serializar usuário!" };
 
                 var usuario = new UsuarioModelo()
