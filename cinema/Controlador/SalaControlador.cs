@@ -17,7 +17,7 @@ namespace cinema.Controlador
             _SalaRepositorio = new SalaRepositorio();
         }
 
-        public RetornoFuncao cadastroSala(string nome, string apelido, string localizacao) 
+        public RetornoFuncao cadastro(string nome, string apelido, string localizacao) 
         {
             var retorno = _SalaRepositorio.cadastro(nome, apelido, localizacao);
             return retorno;

@@ -107,9 +107,16 @@
     <Compile Include="Modelo\RetornoFuncao.cs" />
     <Compile Include="Modelo\SalaModelo.cs" />
     <Compile Include="Modelo\UsuarioModelo.cs" />
+    <Compile Include="Repositório\buscaUsuario.cs" />
     <Compile Include="Repositório\FilmeRepositorio.cs" />
     <Compile Include="Repositório\SalaRepositorio.cs" />
     <Compile Include="Repositório\usuarioRepositorio.cs" />
+    <Compile Include="Visão\BuscaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visão\BuscaUsuario.Designer.cs">
+      <DependentUpon>BuscaUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Visão\CadastroDeFilme.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +158,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Visão\BuscaUsuario.resx">
+      <DependentUpon>BuscaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Visão\CadastroDeFilme.resx">
       <DependentUpon>CadastroDeFilme.cs</DependentUpon>
     </EmbeddedResource>

@@ -80,6 +80,7 @@
             // 
             this.txtapelido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtapelido.Location = new System.Drawing.Point(128, 64);
+            this.txtapelido.MaxLength = 5;
             this.txtapelido.Name = "txtapelido";
             this.txtapelido.Size = new System.Drawing.Size(228, 26);
             this.txtapelido.TabIndex = 4;

@@ -8,7 +8,7 @@ namespace cinema.Modelo
 {
     public class SalaModelo
     {
-        public int codigo { get; set; }
+        public int id { get; set; }
         public string nome { get; set; }
         public string apelido { get; set; }
         public string localizacao { get; set; }

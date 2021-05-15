@@ -31,8 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtnome = new System.Windows.Forms.TextBox();
+            this.txtdescricao = new System.Windows.Forms.TextBox();
             this.btnsair = new System.Windows.Forms.Button();
             this.btncadastrar = new System.Windows.Forms.Button();
             this.cb = new System.Windows.Forms.ComboBox();
@@ -68,23 +68,23 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Situaçaõ:";
             // 
-            // textBox1
+            // txtnome
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(142, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(238, 26);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtnome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnome.Location = new System.Drawing.Point(142, 30);
+            this.txtnome.Name = "txtnome";
+            this.txtnome.Size = new System.Drawing.Size(238, 26);
+            this.txtnome.TabIndex = 3;
+            this.txtnome.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // txtdescricao
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(142, 69);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(238, 26);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtdescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdescricao.Location = new System.Drawing.Point(142, 69);
+            this.txtdescricao.Name = "txtdescricao";
+            this.txtdescricao.Size = new System.Drawing.Size(238, 26);
+            this.txtdescricao.TabIndex = 4;
+            this.txtdescricao.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // btnsair
             // 
@@ -124,8 +124,8 @@
             this.Controls.Add(this.cb);
             this.Controls.Add(this.btncadastrar);
             this.Controls.Add(this.btnsair);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtdescricao);
+            this.Controls.Add(this.txtnome);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -142,8 +142,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtnome;
+        private System.Windows.Forms.TextBox txtdescricao;
         private System.Windows.Forms.Button btnsair;
         private System.Windows.Forms.Button btncadastrar;
         private System.Windows.Forms.ComboBox cb;

@@ -33,5 +33,24 @@ namespace cinema.Visão
         {
             Application.Exit();
         }
+
+        private void cadastroDeSalaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cadastroSala sala = new cadastroSala();
+            sala.Show();
+        }
+
+        private void cadastroDeFilmeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroDeFilme filme = new CadastroDeFilme();
+            filme.Show();
+        }
+
+        private void alterarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BuscaUsuario busca = new BuscaUsuario();
+            busca.Show();
+
+        }
     }
 }

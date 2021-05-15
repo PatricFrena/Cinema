@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cinema.Controlador;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,14 @@ namespace cinema.Visão
 {
     public partial class CadastroDeFilme : Form
     {
+        FilmeControlador _filmeControlador;
         public CadastroDeFilme()
         {
             InitializeComponent();
+
+            MontarComboBox();
+
+            _filmeControlador = new FilmeControlador();
         }
 
         public void MontarComboBox()
@@ -52,7 +58,22 @@ namespace cinema.Visão
 
         private void btncadastrar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                var retorno = _filmeControlador.cadastroFilme(txtnome.Text, txtdescricao.Text, Convert.ToInt32(cb.SelectedIndex));
+                if (retorno.sucesso)
+                {
+                    /*Menu newform2 = new Menu();
+                    this.Hide();
+                    newform2.ShowDialog();*/
+                }
+                else
+                    MessageBox.Show(retorno.Descricao);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

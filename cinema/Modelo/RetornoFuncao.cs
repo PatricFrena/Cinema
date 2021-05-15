@@ -10,5 +10,8 @@ namespace cinema.Modelo
     {
         public bool sucesso { get; set; }
         public string Descricao { get; set; }
+
+
+
     }
 }

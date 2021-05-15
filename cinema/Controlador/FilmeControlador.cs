@@ -17,9 +17,9 @@ namespace cinema.Controlador
             _FilmeRepositorio = new FilmeRepositorio();
         }
 
-        public RetornoFuncao cadastroFilme( string nome, string descricao, string situacao) 
+        public RetornoFuncao cadastroFilme( string nome, string descricao, int situacao) 
         {
-            var retorno = _FilmeRepositorio.cadastro(nome, descricao, situacao);
+            var retorno = _FilmeRepositorio.cadastroFilme(nome, descricao, situacao);
             return retorno;
         }
     }
