@@ -1,5 +1,7 @@
-﻿using cinema.Modelo;
+﻿using cinema.Contexto;
+using cinema.Modelo;
 using cinema.Repositório;
+using Dapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +14,7 @@ namespace cinema.Controlador
     {
         SalaRepositorio _SalaRepositorio;
 
+
         public SalaControlador()
         {
             _SalaRepositorio = new SalaRepositorio();
@@ -21,6 +24,11 @@ namespace cinema.Controlador
         {
             var retorno = _SalaRepositorio.cadastro(nome, apelido, localizacao);
             return retorno;
+        }
+
+        public List<SalaModelo> buscaSalas()
+        {
+            return _SalaRepositorio.buscaSalas();
         }
     }
 }

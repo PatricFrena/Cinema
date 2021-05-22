@@ -52,5 +52,11 @@ namespace cinema.Visão
             busca.Show();
 
         }
+
+        private void ticketsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tickets tickets = new tickets();
+            tickets.Show();
+        }
     }
 }

@@ -102,14 +102,17 @@
     <Compile Include="Controlador\FilmeControlador.cs" />
     <Compile Include="Controlador\LoginControlador.cs" />
     <Compile Include="Controlador\SalaControlador.cs" />
+    <Compile Include="Controlador\ticketsControlador.cs" />
     <Compile Include="Controlador\UsuarioControlador.cs" />
     <Compile Include="Modelo\FilmeModelo.cs" />
     <Compile Include="Modelo\RetornoFuncao.cs" />
     <Compile Include="Modelo\SalaModelo.cs" />
+    <Compile Include="Modelo\ticketsModelo.cs" />
     <Compile Include="Modelo\UsuarioModelo.cs" />
     <Compile Include="Repositório\buscaUsuario.cs" />
     <Compile Include="Repositório\FilmeRepositorio.cs" />
     <Compile Include="Repositório\SalaRepositorio.cs" />
+    <Compile Include="Repositório\ticketsRepositorio.cs" />
     <Compile Include="Repositório\usuarioRepositorio.cs" />
     <Compile Include="Visão\BuscaUsuario.cs">
       <SubType>Form</SubType>
@@ -149,6 +152,12 @@
     <Compile Include="Visão\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Visão\ticktes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visão\ticktes.Designer.cs">
+      <DependentUpon>ticktes.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -175,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Visão\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visão\ticktes.resx">
+      <DependentUpon>ticktes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

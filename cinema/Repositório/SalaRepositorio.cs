@@ -11,6 +11,21 @@ namespace cinema.Repositório
 {
     public class SalaRepositorio
     {
+        public List<SalaModelo> buscaSalas()
+        {
+            try 
+            {
+                var conexao = new BancoDadosDapperContexto();
+
+                var bancoDados = conexao.conexaobanco();
+
+                var sala = bancoDados.Query<SalaModelo>("Select * from sala;").ToList();
+
+
+            }
+            catch { return null; }
+        }
+
         public int geraSala()
         {
             try
