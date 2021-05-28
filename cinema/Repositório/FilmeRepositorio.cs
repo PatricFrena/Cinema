@@ -11,6 +11,22 @@ namespace cinema.Repositório
 {
     public class FilmeRepositorio
     {
+        public List<FilmeModelo> BuscaFilmes()
+        {
+            try
+            {
+                var conexao = new BancoDadosDapperContexto();
+
+                var bancoDados = conexao.conexaobanco();
+
+                var filme = bancoDados.Query<FilmeModelo>("Select * from filmes Where ativo = 1;").ToList();
+
+                return filme;
+
+
+            }
+            catch { return null; }
+        }
 
         public int geraFilme()
         {

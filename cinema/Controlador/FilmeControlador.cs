@@ -22,5 +22,9 @@ namespace cinema.Controlador
             var retorno = _FilmeRepositorio.cadastroFilme(nome, descricao, situacao);
             return retorno;
         }
+        public List<FilmeModelo> BuscaFilmes() 
+        {
+            return _FilmeRepositorio.BuscaFilmes();
+        }
     }
 }

@@ -21,6 +21,8 @@ namespace cinema.Repositório
 
                 var sala = bancoDados.Query<SalaModelo>("Select * from sala;").ToList();
 
+                return sala;
+
 
             }
             catch { return null; }

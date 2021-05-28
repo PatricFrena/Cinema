@@ -14,6 +14,7 @@ namespace cinema.Visão
     public partial class tickets : Form
     {
         SalaControlador _salaControlador;
+        FilmeControlador _filmeControlador;
 
 
         public tickets()
@@ -21,6 +22,9 @@ namespace cinema.Visão
             InitializeComponent();
             Iniciabotoes();
             _salaControlador = new SalaControlador();
+            _filmeControlador = new FilmeControlador();
+            montarComboFilmes();
+            montarComboSala();
         }
 
         private void Iniciabotoes() 
@@ -39,10 +43,46 @@ namespace cinema.Visão
             D3.BackColor = Color.Green;
         }
 
+        private void montarComboFilmes()
+        {
+            var filmes = _filmeControlador.BuscaFilmes();
+
+            cbfilmes.Items.Clear();
+
+            Dictionary<int, string> itenscombobox = new Dictionary<int, string>();
+            foreach (var filme in filmes)
+            { 
+                if(filme.id > 0)
+                 itenscombobox.Add(filme.id, filme.nome);
+            }
+
+            cbfilmes.DataSource = new BindingSource(itenscombobox, null);
+            cbfilmes.DisplayMember = "Value";
+            cbfilmes.ValueMember = "Key";
+
+            if (cbfilmes.Items.Count <= 0)
+                MessageBox.Show("Nenhum filme cadastrado. Favor, verificar!!");
+        }
+
         private void montarComboSala() 
         {
             var salas = _salaControlador.buscaSalas();
+
             cbsalas.Items.Clear();
+
+            Dictionary<int, string> itenscombobox = new Dictionary<int, string>();
+            foreach (var sala in salas)
+            {
+                if (sala.id > 0)
+                itenscombobox.Add(sala.id, sala.nome);
+            }
+
+            cbsalas.DataSource = new BindingSource(itenscombobox, null);
+            cbsalas.DisplayMember = "Value";
+            cbsalas.ValueMember = "key";
+
+            if (cbsalas.Items.Count <= 0)
+                MessageBox.Show("Nenhuma sala cadastrada. Favor, verificar!!");
 
         }
 
@@ -172,6 +212,11 @@ namespace cinema.Visão
         }
 
         private void tickets_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbfilmes_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
