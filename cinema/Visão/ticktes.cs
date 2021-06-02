@@ -15,6 +15,7 @@ namespace cinema.Visão
     {
         SalaControlador _salaControlador;
         FilmeControlador _filmeControlador;
+        public List<Button> botoesPoltrona = new List<Button>();
 
 
         public tickets()
@@ -26,6 +27,24 @@ namespace cinema.Visão
             montarComboFilmes();
             montarComboSala();
         }
+
+        private void ListaBoteos()
+        {
+            botoesPoltrona.Clear();
+            botoesPoltrona.Add(A1);
+            botoesPoltrona.Add(A2);
+            botoesPoltrona.Add(A3);
+            botoesPoltrona.Add(B1);
+            botoesPoltrona.Add(B2);
+            botoesPoltrona.Add(B3);
+            botoesPoltrona.Add(C1);
+            botoesPoltrona.Add(C2);
+            botoesPoltrona.Add(C3);
+            botoesPoltrona.Add(D1);
+            botoesPoltrona.Add(D2);
+            botoesPoltrona.Add(D3);
+        }
+
 
         private void Iniciabotoes() 
         {
@@ -218,6 +237,12 @@ namespace cinema.Visão
 
         private void cbfilmes_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            ListaBoteos();
 
         }
     }
