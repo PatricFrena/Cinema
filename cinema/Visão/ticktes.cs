@@ -15,7 +15,10 @@ namespace cinema.Visão
     {
         SalaControlador _salaControlador;
         FilmeControlador _filmeControlador;
+        ticketsControlador _ticketControlador;
         public List<Button> botoesPoltrona = new List<Button>();
+        private bool novaSessao = true;
+        private bool verificaSessao = false;
 
 
         public tickets()
@@ -24,6 +27,7 @@ namespace cinema.Visão
             Iniciabotoes();
             _salaControlador = new SalaControlador();
             _filmeControlador = new FilmeControlador();
+            _ticketControlador = new ticketsControlador();
             montarComboFilmes();
             montarComboSala();
         }
@@ -244,6 +248,56 @@ namespace cinema.Visão
         {
             ListaBoteos();
 
+            var retornoCadastro = _ticketControlador.CadastrarTicket(Convert.ToInt32(cbsalas.SelectedValue),
+                Convert.ToInt32(cbfilmes.SelectedValue),cbsessaofinalizada.Checked ? 1 : 0,
+                botoesPoltrona);
+            if (retornoCadastro.sucesso)
+            {
+                MessageBox.Show(retornoCadastro.Descricao);
+            }
+            else 
+            {
+                MessageBox.Show("Ocorreu um erro!!");
+            }
+
+        }
+
+        private void btnverificarsessao_Click(object sender, EventArgs e)
+        {
+            try 
+            {
+                var retornoSessaoAtiva = _ticketControlador.buscaSessaoAtiva
+                    (Convert.ToInt32(cbsalas.SelectedValue),Convert.ToInt32(cbfilmes.SelectedValue));
+
+                if (!retornoSessaoAtiva.sucesso)
+                {
+                    MessageBox.Show("Será iniciada uma nova sessão!");
+                    novaSessao = true;
+                    verificaSessao = true;
+                }
+                else 
+                {
+                    novaSessao = false;
+                    ListaBoteos();
+                    var poltronas = _ticketControlador.buscaPoltronaSessao
+                        (Convert.ToInt32(cbsalas.SelectedValue), Convert.ToInt32(cbfilmes.SelectedValue));
+
+                    foreach (var poltrona in poltronas)
+                    {
+                        var btnpoltrona = poltrona.poltrona;
+                        var disponivel = poltrona.disponivel;
+                        foreach (var botoes in botoesPoltrona)
+                        {
+                            if (botoes.Name == btnpoltrona)
+                                botoes.BackColor = disponivel == 1 ? Color.Green : Color.Red;
+                        }
+                    }
+                }
+            }
+            catch 
+            {
+            
+            }
         }
     }
 }

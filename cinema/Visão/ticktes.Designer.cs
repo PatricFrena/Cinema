@@ -130,6 +130,7 @@
             this.btnverificarsessao.TabIndex = 4;
             this.btnverificarsessao.Text = "Verificar Sessão";
             this.btnverificarsessao.UseVisualStyleBackColor = true;
+            this.btnverificarsessao.Click += new System.EventHandler(this.btnverificarsessao_Click);
             // 
             // groupBox2
             // 

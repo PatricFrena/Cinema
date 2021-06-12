@@ -95,6 +95,23 @@ namespace cinema.Repositório
                 };
             }
         }
+        public List<ticketsModelo> verificarSessaoFilmesSalaAtiva(int idSala, int idFilme)
+        {
+            try 
+            {
+                var conexao = new BancoDadosDapperContexto();
+                var BancoDados = conexao.conexaobanco();
 
+                var sessao = BancoDados.Query<ticketsModelo>
+                    ("Select * from ticket WHERE idSala = @idSala" +
+                    "and idFilme = @idFilme", new { idSala = idSala, idFilme = idFilme }).ToList();
+
+                return sessao;
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }
